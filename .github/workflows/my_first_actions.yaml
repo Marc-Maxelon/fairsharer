@@ -28,4 +28,5 @@ jobs:
         ruff .
     - name: Test with pytest
       run: |
-        pytest
+        pytest src/test_fair_sharer.py
+      working-directory: ./src  # Set the working directory to src
