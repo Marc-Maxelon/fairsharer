@@ -9,6 +9,10 @@ on:
 jobs:
   My-first-CI:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: 3.11
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -16,7 +20,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
       run: |
