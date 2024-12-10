@@ -29,4 +29,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest src/test_fair_sharer.py
-      working-directory: ./src  # Set the working directory to src
