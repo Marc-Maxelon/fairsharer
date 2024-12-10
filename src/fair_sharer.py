@@ -17,9 +17,11 @@ def fair_sharer(values, num_iterations, share=0.1):
     for _ in range(num_iterations):
         max_value = max(values)  # Biggest value
         max_index = values.index(max_value)  # Find its index
-        distribution = max_value * share  # Calculate how much to distribute
+        distribution = (
+            max_value * share  # Calculate how much to distribute
+          )
         for i in [max_index - 1, max_index + 1]:  # Left and right neighbors
             neighbor_index = i % len(values)  # Keep index within the list
             values[neighbor_index] += distribution  # Add distribution to the neighbor
-        values[max_index] -= 2 * distribution  # Subtract twice the share from the largest value
+        values[max_index] -= 2 * distribution  # Subtract twice
     return values
