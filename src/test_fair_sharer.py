@@ -1,4 +1,4 @@
-from fair_sharer import fair_sharer
+from src.fair_sharer import fair_sharer
 
 test_1 = fair_sharer([0, 1000, 800, 0], 1)
 print(f"{test_1}")
